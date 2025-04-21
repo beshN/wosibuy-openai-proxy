@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*"); // 🔥 CORS İZNİ
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+
   const OPENAI_API_KEY = process.env.OPENAI_KEY;
 
   if (req.method !== "POST") {
