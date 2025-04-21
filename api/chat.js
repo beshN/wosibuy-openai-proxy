@@ -30,9 +30,9 @@ export default async function handler(req, res) {
     });
 
     const data = await openaiRes.json();
-    res.status(200).json(data);
+    return res.status(200).json(data);
   } catch (error) {
     console.error("OpenAI Proxy Error:", error);
-    res.status(500).json({ error: "OpenAI proxy hatası" });
+    return res.status(500).json({ error: "OpenAI proxy hatası" });
   }
 }
